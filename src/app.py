@@ -77,7 +77,7 @@ def get_people_byId(id):
     people_serialize = people.serialize()
     return jsonify({'msg': 'ok', 'data': people_serialize})
 
-@app.route('/users/<int:user_id>/favorites')
+@app.route('/users/<int:user_id>/favorites', methods=["GET"])
 def get_favorites(user_id):
     user = User.query.get(user_id)
     favorite_planets_serialize =[]
